@@ -27,8 +27,7 @@ Storing CakePHP log into database
          'debug', [
              'engine' => $logEngine,
              'types' => ['notice', 'info', 'debug'],
-             'file' => 'debug',
-             'environment' => $_SERVER['APPLICATION_ENV'],
+             'environment' => 'production-server',
          ]
      );
 
