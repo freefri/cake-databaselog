@@ -5,7 +5,7 @@ Storing CakePHP log into database
 
 ## Installation
 
- Add `"freefri/cake-databaselog": "dev-master",` to your *composer.json*
+ Add `"freefri/cake-databaselog": "dev-master",` to your *composer.json* or clone the repository into `Plugin/CakeDatabaselog``
 
  Load the plugin in your bootstrap.php `CakePlugin::load('CakeDatabaselog');`
 
