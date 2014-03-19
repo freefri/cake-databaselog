@@ -17,6 +17,7 @@ Storing CakePHP log into database
        `title` varchar(30) DEFAULT NULL,
        `message` text,
        `environment` varchar(100) DEFAULT NULL,
+       `server` text,
        `created` datetime DEFAULT NULL,
        PRIMARY KEY (`id`)
      ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
