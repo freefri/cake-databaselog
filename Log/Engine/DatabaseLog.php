@@ -82,6 +82,7 @@ class DatabaseLog implements CakeLogInterface
                 'title' => $title,
                 'message' => $message,
                 'environment' => $this->config['environment'],
+                'server' => json_encode($_SERVER), // log php $_SERVER
             ]
         ];
 
