@@ -3,7 +3,7 @@
 	"description": "Storing CakePHP log into database.",
 	"type": "cakephp-plugin",
 	"keywords": ["cakephp", "log", "database"],
-	"homepage": "https://github.com/markstory/acl_extras",
+	"homepage": "https://github.com/freefri/cake-databaselog",
 	"license": "MIT",
 	"authors": [
 		{
