@@ -1,7 +1,7 @@
 cake-databaseLog
 ================
 
-Storing CakePHP log into database
+Simple storing CakePHP 2.x log into a database.
 
 ## Installation
 
@@ -32,3 +32,5 @@ Storing CakePHP log into database
          ]
      );
 
+## Related projects
+You may also be interested in a more complex solution: https://github.com/dereuromark/CakePHP-DatabaseLog (those two projects are not related)
