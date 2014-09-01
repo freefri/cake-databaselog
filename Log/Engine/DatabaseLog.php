@@ -12,6 +12,7 @@
  * @since    17.03.14
  */
 App::uses('CakeLogInterface', 'Log');
+App::uses('ClassRegistry', 'Utility');
 
 /**
  * Class DatabaseLog
