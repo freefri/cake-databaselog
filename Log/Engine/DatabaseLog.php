@@ -77,12 +77,17 @@ class DatabaseLog implements CakeLogInterface
             $title = null;
         }
 
+        $env = $this->config['environment'];
+        if (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] == '127.0.0.1') {
+            $env = 'localhost';
+        }
+        
         $logEntry = [
             $this->config['model'] => [
                 'type' => $type,
                 'title' => $title,
                 'message' => $message,
-                'environment' => $this->config['environment'],
+                'environment' => $env,
                 'server' => json_encode($_SERVER), // log php $_SERVER
             ]
         ];
