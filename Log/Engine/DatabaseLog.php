@@ -81,14 +81,14 @@ class DatabaseLog implements CakeLogInterface
         if (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] == '127.0.0.1') {
             $env = 'localhost';
         }
-        
+
         $logEntry = [
             $this->config['model'] => [
                 'type' => $type,
                 'title' => $title,
                 'message' => $message,
                 'environment' => $env,
-                'server' => json_encode($_SERVER), // log php $_SERVER
+                'server' => json_encode($this->_getSecuredServer()),
             ]
         ];
 
@@ -96,6 +96,22 @@ class DatabaseLog implements CakeLogInterface
             $this->LogModel->create();
             $this->LogModel->save($logEntry);
         }
+    }
+
+    private function _getSecuredServer()
+    {
+        $server['AUTH_TOKEN_UID'] = $_SERVER['AUTH_TOKEN_UID'] ?? '';
+        $server['TAG_VERSION'] = $_SERVER['TAG_VERSION'] ?? '';
+        $server['REQUEST_METHOD'] = $_SERVER['REQUEST_METHOD'] ?? '';
+        $server['REQUEST_URI'] = $_SERVER['REQUEST_URI'] ?? '';
+        $server['APPLICATION_ENV'] = $_SERVER['APPLICATION_ENV'] ?? '';
+        $server['HTTP_USER_AGENT'] = $_SERVER['HTTP_USER_AGENT'] ?? '';
+        $server['HTTP_HOST'] = $_SERVER['HTTP_HOST'] ?? '';
+        $server['SERVER_ADDR'] = $_SERVER['SERVER_ADDR'] ?? '';
+        $server['REMOTE_ADDR'] = $_SERVER['REMOTE_ADDR'] ?? '';
+        $server['QUERY_STRING'] = $_SERVER['QUERY_STRING'] ?? '';
+        $server['REQUEST_TIME_FLOAT'] = $_SERVER['REQUEST_TIME_FLOAT'] ?? '';
+        return $server;
     }
 
     /**
