@@ -3,6 +3,8 @@ cake-databaseLog
 
 Simple storing CakePHP 2.x log into a database.
 
+This package does **not** automatically update in [packagist.org](https://packagist.org/packages/freefri/cake-databaselog)
+
 ## Installation
 
  Add `"freefri/cake-databaselog": "dev-master",` to your *composer.json* or clone the repository into `Plugin/CakeDatabaselog`
