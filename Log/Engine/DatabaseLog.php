@@ -86,7 +86,7 @@ class DatabaseLog implements CakeLogInterface
             $this->config['model'] => [
                 'type' => $type,
                 'title' => $title,
-                'message' => $message,
+                'message' => mb_substr($message, 0, 65535),
                 'environment' => $env,
                 'server' => json_encode($this->_getSecuredServer()),
             ]
